@@ -32,9 +32,14 @@ print (list1)
 
 # Slicing lists (like strings)
 list1 = [1, 2, 3, 4, 5, 6]
-print(  list1[0:2]  )       # 1,2
-print(  list1[2:4]  )       # 3, 4
-print(  list1[:2]  )        # 1, 2
-print(  list1[4:]  )        # 5, 6
-print(  list1[9:9]  )       # []
-print(  len(list1[9:9])  )  # size 0
+print(list1[0:2])       # 1,2
+print(list1[2:4])       # 3, 4
+print(list1[:2])        # 1, 2
+print(list1[4:])        # 5, 6
+print(list1[9:9])       # []
+print(len(list1[9:9]))  # size 0
+
+# Remove duplicates (dics cannot duplicate, so use conversion)
+list1 = [1, 1, 2, 2, 3, 3]
+list1 = list(dict.fromkeys(list1))
+print(list1)
