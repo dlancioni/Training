@@ -3,7 +3,7 @@
 import sys
 
 # Add to pythonpath
-#sys.path.append("util/string/")
+sys.path.append("util/string/")
 sys.path.append("util/")
 
 #from util.string.stringfunc import trim

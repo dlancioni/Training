@@ -1,3 +1,6 @@
+# https://www.educative.io/edpresso/what-are-locks-in-python
+# Research about semaphoro
+
 import os
 import threading
 from os.path import exists
