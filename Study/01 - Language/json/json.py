@@ -1,26 +1,44 @@
 # https://www.programiz.com/python-programming/json
 import os
 os.system("cls")
-
-
 import json;
-import requests;
 
-url = "https://jsonplaceholder.typicode.com/todos/1"
-json = requests.get(url).json()
+# prepare json string
+str = '''
+{
+    "name":"David", 
+    "lastName":"Lancioni", 
+    "docto":
+    [
+        {"name":"RG", "value":"11111"},
+        {"name":"Cpf", "value":"99999"}
+    ]
+}
+'''
+
+# import json string
+dict1 = json.loads(str)
+
+# python handle json as dict
+print (isinstance(dict1, dict) )
 
 # print document
-print(json)
+print(dict1)
 
-# print tags
-print(json["userId"])
-print(json["title"])
+# read tags in first level
+print(dict1["name"])
+print(dict1["lastName"])
 
-# add tag
-json["status"] = "pending"
-print(json)
+# read tags in second level
+print(dict1["docto"][0]["name"])
+print(dict1["docto"][0]["value"])
 
-# add sub level
-json["info"] = "{'color'='red', 'value'=22.99}"
-print(json)
-
+# iterating
+os.system("cls")
+for k, v in dict1.items():
+    if isinstance(v, list):
+        arr = list(v)
+        for item in arr:
+            print("    " + item["value"] + " - " + item["value"])
+    else:
+        print(v)
