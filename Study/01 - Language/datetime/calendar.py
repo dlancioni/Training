@@ -25,5 +25,4 @@ def dayOfWeek(dt):
     dt = date(yy, mm, dd)
     return calendar.day_name[dt.weekday()].upper()
 
-os.system("cls")
 print(dayOfWeek("11 02 2021"))
