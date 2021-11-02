@@ -48,3 +48,6 @@ if 1 < x < 3:
 
 if 1 < x < 3:
     print("In range - performatic and short")
+
+if 1 <= x <= 3:
+    print("In range - Note the sinal <= to include bounderies")    

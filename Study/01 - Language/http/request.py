@@ -21,4 +21,3 @@ print(json)
 
 print(json["places"][0]["place name"])
 print(json["places"][1]["place name"])
-
