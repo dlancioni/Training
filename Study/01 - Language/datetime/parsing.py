@@ -33,5 +33,5 @@ print(strftime("%Y-%m-%d %H:%M:%S", now))
 now = time.strptime("30 Nov 1999 23:59", "%d %b %Y %H:%M")      # full datetime
 print(strftime("%Y-%m-%d %H:%M:%S", now))
 
-d0 = datetime.fromtimestamp("Sun 10 May 2015 13:54:36").strftime("%A, %B %d, %Y %I:%M:%S") # Best form !!!
-print(d0)
+now = datetime.fromtimestamp("Sun 10 May 2015 13:54:36").strftime("%A, %B %d, %Y %I:%M:%S") # Best form !!!
+print(now)
