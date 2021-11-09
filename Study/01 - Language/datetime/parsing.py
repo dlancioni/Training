@@ -1,8 +1,7 @@
 # https://docs.python.org/3/library/time.html
 
-from time import strftime, time, gmtime
 import time
-from datetime import datetime
+from time import strftime, gmtime
 import os
 os.system("cls")
 
