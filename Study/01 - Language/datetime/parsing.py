@@ -2,7 +2,7 @@
 
 from time import strftime, time, gmtime
 import time
-import datetime
+from datetime import datetime
 import os
 os.system("cls")
 
@@ -21,17 +21,23 @@ print(strftime("%w", now)) # weekday 0 - 6
 print(strftime("%z", now)) # timezone -0300
 
 # [STRING TO DATETIME]
-now = time.strptime("30 Nov 00", "%d %b %y")        # 2 digit [y]ear
+
+# 2 digit [y]ear
+now = time.strptime("30 Nov 00", "%d %b %y")
 print(strftime("%Y-%m-%d %H:%M:%S", now))
 
-now = time.strptime("30 Nov 1999", "%d %b %Y")      # 4 digit [Y]ear
+# 4 digit [Y]ear
+now = time.strptime("30 Nov 1999", "%d %b %Y")
 print(strftime("%Y-%m-%d %H:%M:%S", now))
 
-now = time.strptime("23:59", "%H:%M")               # time only
+# time only
+now = time.strptime("23:59", "%H:%M")
 print(strftime("%Y-%m-%d %H:%M:%S", now))
 
-now = time.strptime("30 Nov 1999 23:59", "%d %b %Y %H:%M")      # full datetime
+# full datetime
+now = time.strptime("30 Nov 1999 23:59:12", "%d %b %Y %H:%M:%S")
 print(strftime("%Y-%m-%d %H:%M:%S", now))
 
-now = datetime.fromtimestamp("Sun 10 May 2015 13:54:36").strftime("%A, %B %d, %Y %I:%M:%S") # Best form !!!
-print(now)
+# full datetime with weekday
+now = time.strptime("Sun 30 Nov 1999 23:59:12", "%a %d %b %Y %H:%M:%S")
+print(strftime("%Y-%m-%d %H:%M:%S", now))
