@@ -8,17 +8,19 @@ import time
 from datetime import datetime
 
 # difference between 2 days
-x = time.strptime("Sun 29 Nov 1999 00:00:00", "%a %d %b %Y %H:%M:%S")
-y = time.strptime("Sun 30 Nov 1999 00:00:01", "%a %d %b %Y %H:%M:%S")
+tuple0 = time.strptime("Sun 29 Nov 1999 00:00:00", "%a %d %b %Y %H:%M:%S")
+tuple1 = time.strptime("Sun 30 Nov 1999 00:00:05", "%a %d %b %Y %H:%M:%S")
 
 # convert tuple to datetime
-d0 = datetime(*x[0:6])
-d1 = datetime(*y[0:6])
+d0 = datetime(*tuple0[0:6])
+d1 = datetime(*tuple1[0:6])
 
 diff = abs(int((d1 - d0).total_seconds()))
 print("Diff in seconds {} ".format(diff))
 
-print((d1.day - d0.day))
-print(d1.month - d0.month)
-print(d1.year - d0.year)
+# Convert days to date
+d2 = datetime(tuple0.tm_year, tuple0.tm_mon, tuple0.tm_mday)
+print(d2)
+
+
 
