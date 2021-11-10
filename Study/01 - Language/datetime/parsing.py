@@ -1,5 +1,6 @@
 # https://docs.python.org/3/library/time.html
 
+from datetime import datetime
 import time
 from time import strftime, gmtime
 import os
@@ -40,3 +41,10 @@ print(strftime("%Y-%m-%d %H:%M:%S", now))
 # full datetime with weekday
 now = time.strptime("Sun 30 Nov 1999 23:59:12", "%a %d %b %Y %H:%M:%S")
 print(strftime("%Y-%m-%d %H:%M:%S", now))
+
+# Read time zone (see %z) 
+# Note that datetime must be converted to tuple to be formatted
+now = datetime.strptime("Sun 10 May 2015 13:54:36 +0500", "%a %d %b %Y %H:%M:%S %z")
+print(now)
+print(strftime("%Y-%m-%d %H:%M:%S %z", now.timetuple()))
+

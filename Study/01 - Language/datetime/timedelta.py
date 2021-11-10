@@ -9,6 +9,11 @@ from dateutil.relativedelta import relativedelta  # pip install python-dateutil
 
 # define date to work
 dt = datetime(2021, 12, 1, 0, 0)
+tm = datetime.now()
+
+# add/remove hours
+print(tm + timedelta(hours =+ 1))
+print(tm + timedelta(hours =-1 ))
 
 # Add/remove days
 print(dt + timedelta(days =+ 1))
