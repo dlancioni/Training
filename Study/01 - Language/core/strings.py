@@ -17,6 +17,7 @@ print("Dollar price is {} and Euro price is {}".format(5.50, 6.40))
 print("{0} is age of {1}. {0} is studying now".format("David", 42))
 print("I am studying {language}".format(language="Python"))
 print("David {:^16} Lancioni". format("Coutinho"))
+print(f"David {1+2} Lancioni")
 
 #Functions
 # https://www.w3schools.com/python/python_ref_string.asp
