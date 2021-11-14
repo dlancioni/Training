@@ -1,0 +1,10 @@
+
+# specifc test module
+python -m unittest test_sum.py
+python -m unittest test_sub.py
+
+# run all test_ files in the same folder
+python -m unittest discover
+
+# run all tests inside "single" folder
+python -m unittest discover -s single
