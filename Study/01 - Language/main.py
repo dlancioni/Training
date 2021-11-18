@@ -7,3 +7,6 @@
 
 import math
 
+x = list[1,2,3]
+y = tuple()
+print(y)

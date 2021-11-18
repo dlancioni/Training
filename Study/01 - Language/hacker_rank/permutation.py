@@ -4,18 +4,20 @@
 import os
 from itertools import permutations, product, count
 
-x = 2
-y = 2
-z = 2
+x = 1
+y = 1
+z = 1
 n = 2
 
 # core logic
 def fn1():
+    output = ""
     for i in range(0, x + 1):
         for j in range(0, y + 1):
             for k in range(0, z + 1):
                 if (i + j + k) != n:
-                    print([i, j, k])
+                    output += str([i, j, k]) + ", "
+    print("[{}]".format(output[:-2]))
                
 # itertools
 def fn2():
@@ -31,4 +33,4 @@ def fn3():
 
 
 os.system("cls")        
-print(list(permutations( [0,3,1], 3)))
+fn1()
