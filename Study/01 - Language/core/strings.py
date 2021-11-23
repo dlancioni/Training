@@ -39,3 +39,22 @@ x = """
     Lancioni
     """
 print(x)    
+
+
+b = ['a', ' b', 'c ', ' d ']
+print(enumerate(b))
+for i, s in enumerate(b):
+    if s.strip() != b[i]:  # leading or trailing whitespace?
+        del b[i]
+
+
+# upper and capitalize
+def capitalize(value, separator):
+    arr = value.split(separator)
+    arr[:] = [x.capitalize() + " " for x in arr]
+    return "".join(arr)
+
+os.system("cls")
+x = capitalize("david coutinho lancioni", " ")
+print(x)
+
