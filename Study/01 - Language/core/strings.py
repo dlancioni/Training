@@ -40,6 +40,10 @@ print("I am not".find("not"))                              # 5 as it is the posi
 print("David, David, David".replace("David", "Renata", 2)) # number of occurences or all
 
 # split or join
+line = "David Lancioni"
+print(line.split(" "))                      # ['David', 'Lancioni']
+print("-".join(['David', 'Lancioni']))      # David-Lancioni
+
 print("david coutinho lancioni".split(" "))
 print("".join(["a", "b"]))
 print("".join(map(str, [1, 2, 3])))

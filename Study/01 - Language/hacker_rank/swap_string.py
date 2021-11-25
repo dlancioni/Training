@@ -3,11 +3,15 @@
 import os
 os.system("cls")
 
-def swap(v):   
-    [print(k[0:1].lower() + k[1:].upper()) for k in v]
+def swap_case(s):   
+    return "".join([k.lower() if k.isupper() else k.upper() for k in (s)])
 
-#swap([' david"', '"lancioni"'])
+print(swap_case('HackerRank.com presents "Pythonist 2".'))
+print(swap_case('"####david "///lancioni'))
 
-
-print(('"David1'.isalnum()))
-print(('"David'.isalpha()))
+def split_and_join(line):
+    x = line.split(" ")
+    y = "-".join(x)
+    return y 
+    
+print(split_and_join("David Lancioni"))
