@@ -32,6 +32,8 @@ print(x)
 # https://www.w3schools.com/python/python_ref_string.asp
 print("david coutinho lancioni".capitalize())              # first upper
 print("david coutinho lancioni".title())                   # first upper for each word in the sentence 
+print("david".upper())                                     # all upper 
+print("david".lower())                                     # all lowwer
 print("David,".endswith(","))                              # false if not found or not exists 
 print("I am, I am not".count("am"))                        # number of occurences or zero if not found
 print("I am not".find("not"))                              # 5 as it is the position where beggining of string [not] is found 
@@ -41,3 +43,6 @@ print("David, David, David".replace("David", "Renata", 2)) # number of occurence
 print("david coutinho lancioni".split(" "))
 print("".join(["a", "b"]))
 print("".join(map(str, [1, 2, 3])))
+
+
+
