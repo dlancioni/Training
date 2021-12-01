@@ -1,3 +1,6 @@
+import os
+os.system("cls")
+
 
 # Python tips and tricks
 # https://www.youtube.com/watch?v=Wz5oLT55_jY&list=PL7yh-TELLS1GNyuvPsFEqb7JVMEUTtuau
@@ -5,8 +8,9 @@
 # Python Advanced
 # https://www.youtube.com/watch?v=KSiRzuSx120&list=PL7yh-TELLS1FuqLSjl5bgiQIEH25VEmIc
 
-import math
+integer_list = "1 2"
+integer_list = map(int, integer_list.split())
 
-x = list[1,2,3]
-y = tuple()
-print(y)
+
+t = tuple(integer_list)
+print(hash(t))

@@ -15,6 +15,10 @@ print("54321"[::-1])   #revert string
 
 # Formatting
 # https://www.w3schools.com/python/ref_string_format.asp
+first = "David"
+last = "Lancioni"
+print(f"My first name is {first} {last}")
+print(f"My first name is {first + last}")
 print("Dollar price is {} in Brasil".format(5.50))
 print("Dollar price is {} and Euro price is {}".format(5.50, 6.40))
 print("{0} is age of {1}. {0} is studying now".format("David", 42))
