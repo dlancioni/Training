@@ -1,4 +1,5 @@
 import os
+import re
 os.system("cls")
 
 #https://docs.python.org/3/tutorial/introduction.html#strings
@@ -52,5 +53,22 @@ print("david coutinho lancioni".split(" "))
 print("".join(["a", "b"]))
 print("".join(map(str, [1, 2, 3])))
 
+# change caracteres in string
+# must convert to list or slice
+def replace_char(string, position, character):
+    l = list(string)
+    l[position] = character
+    output = "".join(l)
+    return output
 
+print(replace_char("abracadabra", 5, "k"))
+    
+# count number of substrings in the funciton
+# string.count() do not overlap
+def count_substr(string, sub_string):
+    pattern = "(?=_)".replace("_", sub_string)
+    total = len(re.findall((pattern), string))
+    return total
+
+print(count_substr("ABCDCDC", "CDC"))
 
