@@ -33,7 +33,7 @@ x = """
     """
 print(x)    
 
-#Functions
+# functions
 # https://www.w3schools.com/python/python_ref_string.asp
 print("david coutinho lancioni".capitalize())              # first upper
 print("david coutinho lancioni".title())                   # first upper for each word in the sentence 
@@ -52,6 +52,23 @@ print("-".join(['David', 'Lancioni']))      # David-Lancioni
 print("david coutinho lancioni".split(" "))
 print("".join(["a", "b"]))
 print("".join(map(str, [1, 2, 3])))
+
+# string validators
+print("aabb!".isalnum())                                   # a-z 0-9 only False 
+print("AaBb".isalnum())                                    # a-z 0-9 only True
+
+print("AaBb1".isalpha())                                   # a-z only False 
+print("AaBb!".isalpha())                                   # a-z only False
+print("AaBb".isalpha())                                    # a-z only True
+
+print("0123456789!".isdigit())                             # a-z 0-9 only False 
+print("0123456789".isdigit())                              # a-z 0-9 only True
+
+print("AbCd".isupper())                                    # False
+print("AbCd".islower())                                    # False
+print("#!%".islower())                                     # False
+
+
 
 # change caracteres in string
 # must convert to list or slice
@@ -72,3 +89,12 @@ def count_substr(string, sub_string):
 
 print(count_substr("ABCDCDC", "CDC"))
 
+
+
+
+s= "qA2"
+print(True) if s.isalnum() else print(False)
+print(True) if s.isalpha() else print(False)
+print(True) if s.isdigit() else print(False)
+print(True) if s.islower() else print(False)
+print(True) if s.isupper() else print(False)
