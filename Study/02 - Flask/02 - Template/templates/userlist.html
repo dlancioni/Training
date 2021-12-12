@@ -1,0 +1,27 @@
+<html>
+<body>
+<form name="fom1" method="Post" Action = "/processform">
+
+<p>User List</p>
+
+<table>
+
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Action</td>        
+    </tr>
+
+    {% for i in range(rs | length) %}
+        <tr>
+            <td>{{ i }}</td>
+            <td>{{ rs[i] }}</td>
+            <td>{{ "" }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+</form>
+</body>
+</html>

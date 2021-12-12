@@ -1,0 +1,26 @@
+<html>
+<body>
+<form name="fom1" method="Post" Action = "{{ url_for("userform_save") }}">
+    User Form
+    <br>
+    <br>
+
+    <table>
+        <tr>
+            <td>Id</td>
+            <td><input type="text" id="id" name="id" value="{{id}}"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" id="name" name="name" value="{{name}}"></td>
+        </tr>        
+    </table>
+
+    <br>
+
+    <p><input type="submit" value="Save" onclick=""></p>
+    <p><a href="{{ url_for("userlist") }}">Back</a></p>
+
+</form>
+</body>
+</html>
