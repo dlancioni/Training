@@ -1,9 +1,13 @@
+# To run the application, in app root directory type python run.py
+# To debug, just open run.py in vscode and type F5
+
+# Create the database
 from blogapp import db
 db.drop_all()
 db.create_all()
-from blogapp.models import User, Post
 
-# Add data
+# Insert data
+from blogapp.models import User, Post
 db.session.add( User(username="David", email="david@demo.com") )
 db.session.add( User(username="Renata", email="renata@demo.com") )
 db.session.add( Post(title="Blog1", content="First post content from David", user_id = 1) )
