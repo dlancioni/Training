@@ -1,0 +1,15 @@
+<html>
+<body>
+<form method="POST" action="" novalidate>
+    {{ form.csrf_token() }}
+    <br>
+    {{ form.country.label }}
+    {{ form.country }}
+    <br>
+    {{ form.state.label }}
+    {{ form.state }}
+    <br>
+    {{ form.submit() }}
+</form>
+</body>
+</html>

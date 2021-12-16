@@ -1,53 +1,41 @@
 <html>
 <body>
 <form method="POST" action="" novalidate>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            {{ form.csrf_token() }}
-
-            {{ form.firstname.label }}
-            {{ form.firstname }}            
-            {% if form.firstname.errors %}
-                {% for error in form.firstname.errors %}
-                    <span>{{ error }}</span>
-                {% endfor %}
-            {% endif %}
-
-            <br>
-
-            {{ form.lastname.label }}
-            {{ form.lastname }}
-            {% if form.lastname.errors %}
-                {% for error in form.lastname.errors %}
-                    <span>{{ error }}</span>
-                {% endfor %}
-            {% endif %}
-
-            <br>
-
-            {{ form.email.label }}
-            {{ form.email }} 
-            {% if form.email.errors %}
-                {% for error in form.email.errors %}
-                    <span>{{ error }}</span>
-                {% endfor %}
-            {% endif %}            
-
-            <br>
-
-            {{ form.password.label }}
-            {{ form.password }} 
-            {% if form.password.errors %}
-                {% for error in form.password.errors %}
-                    <span>{{ error }}</span>
-                {% endfor %}
-            {% endif %}
-
-        </div>
-        <div class="form-group">
-            {{ form.submit() }}
-        </div>
-    </div>
+    {{ form.csrf_token() }}
+    <br>
+    {{ form.firstname.label }}
+    {{ form.firstname }}            
+    {% if form.firstname.errors %}
+        {% for error in form.firstname.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    {% endif %}
+    <br>
+    {{ form.lastname.label }}
+    {{ form.lastname }}
+    {% if form.lastname.errors %}
+        {% for error in form.lastname.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    {% endif %}
+    <br>
+    {{ form.email.label }}
+    {{ form.email }} 
+    {% if form.email.errors %}
+        {% for error in form.email.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    {% endif %}            
+    <br>
+    {{ form.password.label }}
+    {{ form.password }} 
+    {% if form.password.errors %}
+        {% for error in form.password.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    {% endif %}
+    <br>
+    {{ form.submit() }}
 </form>
 </body>
 </html>

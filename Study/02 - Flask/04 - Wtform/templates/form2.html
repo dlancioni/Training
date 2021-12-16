@@ -1,33 +1,26 @@
 <html>
 <body>
 <form method="POST" action="" novalidate>
-    <div class="form-row">
-        <div class="form-group col-md-6">
-            {{ form.csrf_token() }}
-
-            {{ form.username.label }}
-            {{ form.username }}            
-            {% if form.username.errors %}
-                {% for error in form.username.errors %}
-                    <span>{{ error }}</span>
-                {% endfor %}
-            {% endif %}
-
-            <br>
-
-            {{ form.password.label }}
-            {{ form.password }} 
-            {% if form.password.errors %}
-                {% for error in form.password.errors %}
-                    <span>{{ error }}</span>
-                {% endfor %}
-            {% endif %}
-
-        </div>
-        <div class="form-group">
-            {{ form.submit() }}
-        </div>
-    </div>
+    {{ form.csrf_token() }}
+    <br>
+    {{ form.username.label }}
+    {{ form.username }}            
+    {% if form.username.errors %}
+        {% for error in form.username.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    {% endif %}
+    <br>
+    {{ form.password.label }}
+    {{ form.password }} 
+    {% if form.password.errors %}
+        {% for error in form.password.errors %}
+            <span>{{ error }}</span>
+        {% endfor %}
+    {% endif %}
+    <br>
+    {{ form.submit() }}
+    <br>
 </form>
 </body>
 </html>
