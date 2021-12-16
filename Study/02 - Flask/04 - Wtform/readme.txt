@@ -13,6 +13,7 @@
     a. create a regular python function ABOVE the form classes
     b. call the function in validors[] as you do with regular validators
     c. the function must raise an exception. ex: raise ValidationError("Username é obrigatório")
+    d. IMPORTANT, you need chain function. First to pass input parameter, second to pass mandatory form/field parameters 
 5) Dont forget to test if the form is validated in route that is mounting the form:
-    a. if form.validate_on_submit():    
-
+    a. if form.validate_on_submit():
+6) Some validators (like Email) are not standard and must be installed via PIP command

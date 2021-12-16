@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, InputRequired, ValidationError
+from wtforms import StringField, SubmitField, PasswordField, EmailField
+from wtforms.validators import DataRequired, Email, InputRequired, ValidationError, email_validator
 
 # this method is globa, you can use in any form
 # note you have to use as any other validator (see line 18)
@@ -14,10 +14,11 @@ def length(min=-1, max=-1, message=""):
     return _length
 
 class Form1(FlaskForm):
+    
     firstname = StringField(label=('First Name:'), validators=[InputRequired(message="First name is mandatory")])
     lastname = StringField(label=('Last Name:'), validators=[])
-    password = StringField(label=('Password:'), validators=[length(min=2, max=5, message="Password must be %d and %d characteres long")])
-    
+    email = EmailField(label=('EmailL'), validators=[Email(message="Email field looks incorrent")])
+    password = StringField(label=('Password:'), validators=[length(min=2, max=5, message="Password must be %d and %d characteres long")])    
     submit = SubmitField(label=('Submit'))
     
     # this method is specifically used in field username field
@@ -26,4 +27,7 @@ class Form1(FlaskForm):
         if len(field.data) == 0:
             raise ValidationError("Last name is mandatory")
 
-    
+class Form2(FlaskForm):
+    username = StringField(label=('Username:'), validators=[])
+    password = PasswordField(label=('Password:'), validators=[length(min=2, max=5, message="Password must be %d and %d characteres long")])    
+    submit = SubmitField(label=('Submit'))
