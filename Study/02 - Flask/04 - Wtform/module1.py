@@ -3,6 +3,10 @@ from forms import Form1, Form2
 
 module1 = Blueprint('module1',__name__)
 
+@module1.route('/', methods=('GET', 'POST'))
+def index():
+    return "Please inform the form (form1, form2) in the URL"
+
 @module1.route('/form1', methods=('GET', 'POST'))
 def form1():
     form = Form1()

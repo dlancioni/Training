@@ -3,26 +3,23 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, PasswordField, EmailField
 from wtforms.validators import DataRequired, Email, InputRequired, ValidationError, email_validator
 
-# this method is globa, you can use in any form
-# note you have to use as any other validator (see line 18)
+# Custom validator to be used in any below class (must have sub function)
 def length(min=-1, max=-1, message=""):
     message = message % (min, max)
-    def _length(form, field):
+    def _length(self, field):
         l = field.data and len(field.data) or 0
         if l < min or max != -1 and l > max:
             raise ValidationError(message)
     return _length
 
-class Form1(FlaskForm):
-    
+class Form1(FlaskForm):    
     firstname = StringField(label=('First Name:'), validators=[InputRequired(message="First name is mandatory")])
     lastname = StringField(label=('Last Name:'), validators=[])
-    email = EmailField(label=('EmailL'), validators=[Email(message="Email field looks incorrent")])
+    email = EmailField(label=('Email'), validators=[Email(message="Email field looks incorrent")])
     password = StringField(label=('Password:'), validators=[length(min=2, max=5, message="Password must be %d and %d characteres long")])    
     submit = SubmitField(label=('Submit'))
     
-    # this method is specifically used in field username field
-    # note that you dont need to call it anyware
+    # in-form field specific validator (note the name validate_[fieldname])
     def validate_lastname(self, field):
         if len(field.data) == 0:
             raise ValidationError("Last name is mandatory")
