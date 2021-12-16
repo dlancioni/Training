@@ -27,6 +27,12 @@
         {% endfor %}
     {% endif %}            
     <br>
+    {{ form.country.label }}
+    {{ form.country }}
+    <br>
+    {{ form.state.label }}
+    {{ form.state }}
+    <br>
     {{ form.password.label }}
     {{ form.password }} 
     {% if form.password.errors %}
