@@ -2,12 +2,17 @@
 # Below some notes to make things work fine
 
 1) in the html form, let action empty so the post goes to the caller route
-2) use novalidate in the form definition otherwise custom messages does not work (waste some time here)
-3) to create custon validate, follow below rules:
-    a. custom validation is a method defined in the class definition
-    b. must be named validate_[fieldname] and receive field as parameter.ex: validate_username(self, field):
+2) IMPORTANT, use "novalidate" in the form definition otherwise custom messages does not work (you see standard message in english)
+3) to create custon validate (for specific field):
+    a. in the class form, define a method named validate_[fieldname] passing the field as parameter.ex: 
+        validate_name(self, field), 
+        validate_password(self, field)
     c. the function must raise an exception. ex: raise ValidationError("Username é obrigatório")
     d. it is not necessary to call this function anyware
-4) 
-5) 
+4) to create custon validate (global, used in any form):
+    a. create a regular python function ABOVE the form classes
+    b. call the function in validors[] as you do with regular validators
+    c. the function must raise an exception. ex: raise ValidationError("Username é obrigatório")
+5) Dont forget to test if the form is validated in route that is mounting the form:
+    a. if form.validate_on_submit():    
 

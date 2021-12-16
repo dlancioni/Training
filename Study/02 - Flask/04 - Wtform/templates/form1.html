@@ -5,10 +5,20 @@
         <div class="form-group col-md-6">
             {{ form.csrf_token() }}
 
-            {{ form.username.label }}
-            {{ form.username }}            
-            {% if form.username.errors %}
-                {% for error in form.username.errors %}
+            {{ form.firstname.label }}
+            {{ form.firstname }}            
+            {% if form.firstname.errors %}
+                {% for error in form.firstname.errors %}
+                    <span>{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+
+            <br>
+
+            {{ form.lastname.label }}
+            {{ form.lastname }}
+            {% if form.lastname.errors %}
+                {% for error in form.lastname.errors %}
                     <span>{{ error }}</span>
                 {% endfor %}
             {% endif %}
