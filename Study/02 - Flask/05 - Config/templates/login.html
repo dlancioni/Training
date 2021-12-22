@@ -1,0 +1,30 @@
+<html>
+<body>
+<form name="fom1" method="Post" Action = "/processform" >
+Page 1
+<br>
+<br>
+
+{% if p1=="david": %} 
+    <b> login 1
+{% else %}    
+    <b> login 2
+{% endif %}
+
+<input type="text" id="username" name="username" value="{{p1}}">
+<br>
+<input type="text" id="password" name="password" value="{{p2}}">
+<br>
+ <a href="{{ url_for("authenticate", username=p1, password=p2) }}">Click here to see login form again</a>
+ <br>
+
+<input type="submit" value="login" onclick="">
+
+</form>
+</body>
+</html>
+
+<script>
+function enviar() {
+}
+</script>

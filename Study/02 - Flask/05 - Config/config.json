@@ -1,0 +1,6 @@
+{
+    "SECRET_KEY" : "abcdefghjjklmnopqrstuvxz",
+    "SESSION_COOKIE_NAME": "localsession",
+    "ENV": "development"
+
+}
