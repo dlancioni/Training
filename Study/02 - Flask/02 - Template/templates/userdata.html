@@ -1,0 +1,32 @@
+<html>
+<body>
+<form name="fom1" method="Post" Action = "/userdata">
+    <p>We are using local session, based on cookies (see devtools/Application/Cookies)</p>
+    <p>Secret key above avoids user see cookies contents</p>
+    <p>Session is available in templates, not necessary to it as parameters</p>
+
+    <br>
+    <br>
+
+    <table>
+        <tr>
+            <td>Qtt</td>
+            <td>{{session["qtt"]}}</td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td>{{ "{:.2f}".format(session["price"]) }}</td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td>{{ "{:.2f}".format(session["total"]) }}</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <p><input type="submit" value="Add" onclick=""></p>
+
+</form>
+</body>
+</html>

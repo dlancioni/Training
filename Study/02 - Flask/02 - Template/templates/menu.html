@@ -1,0 +1,28 @@
+<html>
+<body>
+<form name="fom1" method="Post" Action = "">
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td>Home</td>
+            <td><a href="{{ url_for("index") }}">Home</a></td>
+        </tr>    
+        <tr>
+            <td>Userlist</td>
+            <td><a href="{{ url_for("userlist") }}">Userlist</a></td>
+        </tr>
+        <tr>
+            <td>Userform</td>
+            <td><a href="{{ url_for("userform") }}">Userform</a></td>
+        </tr>
+        <tr>
+            <td>Userdata</td>
+            <td><a href="{{ url_for("userdata") }}">Userdata</a></td>
+        </tr>
+    </table>
+    <br>
+    <p><input type="submit" value="Add" onclick=""></p>
+</form>
+</body>
+</html>
