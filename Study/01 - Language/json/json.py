@@ -43,7 +43,7 @@ for k, v in dict1.items():
     else:
         print(v)
         
-class User(object):
+class User(dict):
     def __init__(self, firstName, lastName, docto):
         self.firstName = firstName
         self.lastName = lastName
@@ -68,4 +68,8 @@ str = '''
 '''
 data = json.loads(str)
 user = User(**data)
-print(user)    
+print(user) 
+
+# convert class to json
+user = User("David", "Lancioni", [1,2,3])
+print(user.__dict__)
