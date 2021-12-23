@@ -6,7 +6,7 @@ import json;
 # prepare json string
 str = '''
 {
-    "name":"David", 
+    "firstName":"David", 
     "lastName":"Lancioni", 
     "docto":
     [
@@ -26,7 +26,7 @@ print (isinstance(dict1, dict) )
 print(dict1)
 
 # read tags in first level
-print(dict1["name"])
+print(dict1["firstName"])
 print(dict1["lastName"])
 
 # read tags in second level
@@ -42,3 +42,21 @@ for k, v in dict1.items():
             print("    " + item["value"] + " - " + item["value"])
     else:
         print(v)
+        
+class User(object):
+    def __init__(self, firstName, lastName):
+        self.firstName = firstName
+        self.lastName = lastName
+    def __str__(self):
+        return f"{self.firstName} {self.lastName}"
+
+str = '''
+{
+    "firstName":"David", 
+    "lastName":"Lancioni"
+}
+'''
+
+data = json.loads(str)    
+user = User(**data)
+print(user)    
