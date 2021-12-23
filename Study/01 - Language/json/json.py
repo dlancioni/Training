@@ -44,19 +44,28 @@ for k, v in dict1.items():
         print(v)
         
 class User(object):
-    def __init__(self, firstName, lastName):
+    def __init__(self, firstName, lastName, docto):
         self.firstName = firstName
         self.lastName = lastName
+        self.docto = docto
     def __str__(self):
-        return f"{self.firstName} {self.lastName}"
+        return f"{self.firstName} {self.lastName} {self.docto}"
 
+
+
+# convert json to class instance
+os.system("cls")
 str = '''
 {
     "firstName":"David", 
-    "lastName":"Lancioni"
+    "lastName":"Lancioni", 
+    "docto":
+    [
+        {"name":"RG", "value":"11111"},
+        {"name":"Cpf", "value":"99999"}
+    ]
 }
 '''
-
-data = json.loads(str)    
+data = json.loads(str)
 user = User(**data)
 print(user)    
