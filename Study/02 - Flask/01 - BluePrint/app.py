@@ -10,5 +10,4 @@ app.register_blueprint(module1)
 app.register_blueprint(module2)
 
 if __name__ == '__main__':
-   # app.run(debug=True)
-   app.run(debug=True, use_reloader=True)
+   app.run(debug=True)

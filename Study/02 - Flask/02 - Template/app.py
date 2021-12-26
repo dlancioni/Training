@@ -64,10 +64,7 @@ def userform_save():
       # could pass the class
       return render_template('userform.html', rs=users, id=user.id, name=user.name)
 
-
-
-
 if __name__ == '__main__':
-   app.run(debug=True, use_reloader=True)
+   app.run(debug=True)
    
    
