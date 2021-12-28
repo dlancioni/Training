@@ -4,7 +4,7 @@ from src.models.category import Category
 
 def create_db(app, db):
     with app.app_context():
-        if not os.path.isfile("src/db/test.db"):
+        if not os.path.isfile("db/db.dat"):
             try:
                 db.create_all()
                 db.session.add(User("David"))

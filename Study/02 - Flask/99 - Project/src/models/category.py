@@ -1,4 +1,4 @@
-from src.db.config import db
+from db.config import db
 
 class Category(db.Model):
     
