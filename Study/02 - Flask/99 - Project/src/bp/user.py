@@ -1,5 +1,5 @@
-from models.user import User
 from flask.blueprints import Blueprint
+from src.models.user import User
 
 bp_user = Blueprint('bp_user', __name__, template_folder='templates', static_folder='static')
 

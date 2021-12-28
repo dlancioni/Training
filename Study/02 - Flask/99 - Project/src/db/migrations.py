@@ -1,10 +1,10 @@
 import os.path
-from models.user import User
-from models.category import Category
+from src.models.user import User
+from src.models.category import Category
 
 def create_db(app, db):
     with app.app_context():
-        if not os.path.isfile("db/test.db"):
+        if not os.path.isfile("src/db/test.db"):
             try:
                 db.create_all()
                 db.session.add(User("David"))

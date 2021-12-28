@@ -1,12 +1,12 @@
 from flask import Flask
-from db.config import db
-from db.migrations import create_db
-from bp.user import bp_user
-from bp.category import bp_category
+from src.db.config import db
+from src.db.migrations import create_db
+from src.bp.user import bp_user
+from src.bp.category import bp_category
 
 def setup_database(app):
     app.config['DEBUG'] = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db/test.db"
+    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///src/db/test.db"
     db.init_app(app)
     
 def setup_blueprints(app):
