@@ -1,4 +1,4 @@
-from model import User
+from models.user import User
 from flask.blueprints import Blueprint
 
 people = Blueprint('people', __name__, template_folder='templates', static_folder='static')

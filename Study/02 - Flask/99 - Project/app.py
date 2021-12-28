@@ -1,10 +1,8 @@
 import os.path
 from flask import Flask
 from database import db
-# Models
-from model import User
-# Blueprints
-from route_people import people
+from models.user import User
+from modules.user import people
 
 def create_app():
     app = Flask(__name__)
