@@ -1,17 +1,16 @@
 import os.path
 from flask import Flask
-from database import db
 from models.user import User
-from modules.user import people
+from modules.user import mod_user
+from db.config import db
 
 def create_app():
     app = Flask(__name__)
     app.config['DEBUG'] = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///test.db"
+    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db/test.db"
     db.init_app(app)
-    app.register_blueprint(people, url_prefix='')
+    app.register_blueprint(mod_user, url_prefix='')
     return app 
-
 
 def setup_database(app):
     with app.app_context():
@@ -23,7 +22,6 @@ def setup_database(app):
 
 if __name__ == '__main__':
     app = create_app()
-    os.remove("test.db")
-    if not os.path.isfile('/test.db'):
+    if not os.path.isfile('db/test.db'):
         setup_database(app)
     app.run()

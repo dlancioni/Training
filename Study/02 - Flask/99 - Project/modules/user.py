@@ -1,9 +1,9 @@
 from models.user import User
 from flask.blueprints import Blueprint
 
-people = Blueprint('people', __name__, template_folder='templates', static_folder='static')
+mod_user = Blueprint('mod_user', __name__, template_folder='templates', static_folder='static')
 
-@people.route('/')
+@mod_user.route('/')
 def test():
   user = User.query.filter_by(username="Tom").first()
   return "Test: Username %s " % user.username
