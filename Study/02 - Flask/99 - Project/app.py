@@ -12,7 +12,7 @@ def setup_database(app):
     db.init_app(app)
     
 def setup_blueprints(app):
-    app.register_blueprint(store, url_prefix = "/")                 # home page (no prefix ever)
+    app.register_blueprint(store, url_prefix = "/")                       # home page (no prefix ever)
     app.register_blueprint(user, url_prefix = "/admin/user")              # users maintenance
     app.register_blueprint(category, url_prefix = "/admin/category")      # category maintenance
 
