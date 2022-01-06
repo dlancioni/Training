@@ -1,6 +1,7 @@
 from flask import Flask
 from db.config import db
 from db.migrations import create_db
+from web.bp.home import bp_home
 from web.bp.user import bp_user
 from web.bp.category import bp_category
 
@@ -10,6 +11,7 @@ def setup_database(app):
     db.init_app(app)
     
 def setup_blueprints(app):
+    app.register_blueprint(bp_home, url_prefix = "")
     app.register_blueprint(bp_user, url_prefix = "")
     app.register_blueprint(bp_category, url_prefix = "")
 
