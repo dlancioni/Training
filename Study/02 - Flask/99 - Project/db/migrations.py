@@ -1,6 +1,7 @@
 import os.path
 from src.models.user import User
 from src.models.category import Category
+from src.models.product import Product
 
 def create_db(app, db):
     with app.app_context():
@@ -9,17 +10,17 @@ def create_db(app, db):
                 db.create_all()
                 db.session.add(User("David"))
                 db.session.add(User("Renata"))
-                db.session.add(User("Taza"))
-                db.session.add(Category("Padaria"))
-                db.session.add(Category("Açougue"))
-                db.session.add(Category("Limpeza"))
-                db.session.add(Category("Laticineos"))
-                db.session.add(Category("Frutas"))
-                db.session.add(Category("Verduras"))
+                
                 db.session.add(Category("Bebidas"))
+                db.session.add(Category("Padaria"))
+                
+                db.session.add(Product(1, "Heineken", "Cerveja pilsen 600 ml", 100, 8.00, 0))
+                db.session.add(Product(1, "Original", "Cerveja pilsen 600 ml", 100, 6.00, 0))
+                
                 db.session.commit()                
             except:
-                db.rollback()
+                pass
+
                 
 
     
