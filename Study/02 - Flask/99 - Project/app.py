@@ -13,8 +13,8 @@ def setup_database(app):
     
 def setup_blueprints(app):
     app.register_blueprint(store, url_prefix = "/")                 # home page (no prefix ever)
-    app.register_blueprint(user, url_prefix = "/user")              # users maintenance
-    app.register_blueprint(category, url_prefix = "/category")      # category maintenance
+    app.register_blueprint(user, url_prefix = "/admin/user")              # users maintenance
+    app.register_blueprint(category, url_prefix = "/admin/category")      # category maintenance
 
 def create_app():
     app = Flask(__name__)
