@@ -1,4 +1,6 @@
-import os.path
+import os
+import shutil
+from src.db.config import sqlite_path
 from src.models.user import User
 from src.models.category import Category
 from src.models.product import Product
@@ -6,7 +8,8 @@ from src.models.product_info import ProductInfo
 
 def create_db(app, db):
     with app.app_context():
-        if not os.path.isfile("src/db/db.dat"):
+        if not os.path.isfile(sqlite_path):
+            db.drop_all()
             db.create_all()
             db.session.add(User("David"))
             db.session.add(User("Renata"))           
@@ -20,7 +23,6 @@ def create_db(app, db):
             db.session.add(ProductInfo(1, "Observação", "A venda e o consumo de bebidas alcoólicas são proibidos para menores de 18 anos. Beba com moderação. Se for dirigir, não beba!"))
             db.session.add(ProductInfo(1, "País de Origem", "Brasil"))
             db.session.add(ProductInfo(1, "Embalagem", "Lata"))
-            db.session.add(ProductInfo(1, "Quantidade na Embalagem", "350 ml"))
-            
+            db.session.add(ProductInfo(1, "Quantidade na Embalagem", "350 ml"))            
             db.session.commit()
     
