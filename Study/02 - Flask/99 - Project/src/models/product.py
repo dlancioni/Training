@@ -13,12 +13,15 @@ class Product(db.Model):
     __tablename__ = "tb_product"
     
     id = db.Column(db.Integer, primary_key = True)
-    category_id = db.Column(db.Integer, db.ForeignKey("tb_category.id"), nullable=False)    
+    category_id = db.Column(db.Integer, db.ForeignKey("tb_category.id"), nullable=False)
     name = db.Column(db.String(50), unique = True)
     description = db.Column(db.Text, unique = False)
     amount = db.Column(db.Float, unique = False)
     price = db.Column(db.Float, unique = False)
-    discount = db.Column(db.Float, unique = False)    
+    discount = db.Column(db.Float, unique = False)
+    
+    info = db.relationship("ProductInfo", backref="product", lazy=True)
+    picture = db.relationship("ProductPicture", backref="product", lazy=True)
 
     
     def __str__(self):

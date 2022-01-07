@@ -11,7 +11,7 @@ class ProductInfo(db.Model):
     
     id = db.Column(db.Integer, primary_key = True)
     product_id = db.Column(db.Integer, db.ForeignKey("tb_product.id"), nullable=False)    
-    key = db.Column(db.String(100), unique = True)
+    key = db.Column(db.String(100), unique = False)
     value = db.Column(db.Text, unique = False)
 
     def __str__(self):
