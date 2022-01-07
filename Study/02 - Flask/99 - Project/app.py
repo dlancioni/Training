@@ -12,12 +12,16 @@ def setup_database(app):
     db.init_app(app)
     
 def setup_blueprints(app):
-    app.register_blueprint(home, url_prefix = "/")                       # home page (no prefix ever)
+    app.register_blueprint(home, url_prefix = "/")                        # home page (no prefix ever)
     app.register_blueprint(user, url_prefix = "/admin/user")              # users maintenance
     app.register_blueprint(category, url_prefix = "/admin/category")      # category maintenance
 
 def create_app():
-    app = Flask(__name__)
+    app = Flask(__name__,
+                static_url_path="",
+                static_folder="web/static",
+                template_folder="web/templates")
+    
     setup_database(app)
     setup_blueprints(app)
     return app
