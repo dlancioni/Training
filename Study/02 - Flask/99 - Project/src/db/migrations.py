@@ -29,7 +29,7 @@ def add_category(db):
     db.session.add(Category("Bebidas"))
     
 def add_product(db):
-    db.session.add(Product(1, "Heineken Lata 350ml", "Cerveja Lager Premium Puro Malte Heineken, gelada, fresca e de alta qualidade. Apreciada em todos os lugares desde 1873.", 100, 4.39, 0))
+    db.session.add(Product(1, "Heineken Lata 350ml", "Heineken International é uma cervejaria holandesa, fundada em 1863 por Gerard Adriaan Heineken na cidade de Amsterdã.", 100, 4.39, 0))
     db.session.add(ProductInfo(1, "Observação", "A venda e o consumo de bebidas alcoólicas são proibidos para menores de 18 anos. Beba com moderação. Se for dirigir, não beba!"))
     db.session.add(ProductInfo(1, "País de Origem", "Holanda"))
     db.session.add(ProductInfo(1, "Embalagem", "Lata verde"))
@@ -41,14 +41,14 @@ def add_product(db):
     db.session.add(ProductInfo(2, "Embalagem", "Lata branca"))
     db.session.add(ProductPicture(2, "original.png"))
     
-    db.session.add(Product(1, "Bohemia Lata 350ml", "Cerveja Pilsen Antarctica Original, harmonize suas comemorações com um sabor mais suave e refrescante!", 100, 3.49, 0))           
-    db.session.add(ProductInfo(2, "Observação", "A venda e o consumo de bebidas alcoólicas são proibidos para menores de 18 anos. Beba com moderação. Se for dirigir, não beba!"))
-    db.session.add(ProductInfo(2, "País de Origem", "Brasil"))
-    db.session.add(ProductInfo(2, "Embalagem", "Lata branca"))
-    db.session.add(ProductPicture(2, "original.png"))
+    db.session.add(Product(1, "Budweiser Long Neck 350ml", "Budweiser, também conhecida popularmente como Bud, é uma cerveja do tipo long americana, fabricada pela AB InBev, fundada em 1876", 100, 3.49, 0))           
+    db.session.add(ProductInfo(3, "Observação", "A venda e o consumo de bebidas alcoólicas são proibidos para menores de 18 anos. Beba com moderação. Se for dirigir, não beba!"))
+    db.session.add(ProductInfo(3, "País de Origem", "Brasil"))
+    db.session.add(ProductInfo(3, "Embalagem", "Lata branca"))
+    db.session.add(ProductPicture(3, "budweiser.png"))
     
-    db.session.add(Product(1, "Itaipava Lata 350ml", "Cerveja Pilsen Antarctica Original, harmonize suas comemorações com um sabor mais suave e refrescante!", 100, 3.49, 0))           
-    db.session.add(ProductInfo(2, "Observação", "A venda e o consumo de bebidas alcoólicas são proibidos para menores de 18 anos. Beba com moderação. Se for dirigir, não beba!"))
-    db.session.add(ProductInfo(2, "País de Origem", "Brasil"))
-    db.session.add(ProductInfo(2, "Embalagem", "Lata branca"))
-    db.session.add(ProductPicture(2, "original.png"))    
+    db.session.add(Product(1, "Imperial Garrafa 600ml", "Cerveja ouro imperial garrafa 600ml, harmonize suas comemorações com um sabor mais suave e refrescante!", 100, 3.49, 0))           
+    db.session.add(ProductInfo(4, "Observação", "A venda e o consumo de bebidas alcoólicas são proibidos para menores de 18 anos. Beba com moderação. Se for dirigir, não beba!"))
+    db.session.add(ProductInfo(4, "País de Origem", "Brasil"))
+    db.session.add(ProductInfo(4, "Embalagem", "Lata branca"))
+    db.session.add(ProductPicture(4, "imperial.png"))
