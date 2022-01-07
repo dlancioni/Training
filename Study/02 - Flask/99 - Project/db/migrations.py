@@ -18,7 +18,7 @@ def create_db(app, db):
                 db.session.add(Product(1, "Original", "Cerveja pilsen 600 ml", 100, 6.00, 0))
                 
                 db.session.commit()                
-            except:
+            except Exception as ex:
                 pass
 
                 
