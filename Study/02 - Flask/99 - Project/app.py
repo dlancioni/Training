@@ -1,6 +1,6 @@
 from flask import Flask
-from db.config import db
-from db.migrations import create_db
+from src.db.config import db
+from src.db.migrations import create_db
 
 from web.blueprints.user import user
 from web.blueprints.category import category
@@ -8,7 +8,7 @@ from web.blueprints.store import store
 
 def setup_database(app):
     app.config['DEBUG'] = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///db/db.dat"
+    app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///src/db/db.dat"
     db.init_app(app)
     
 def setup_blueprints(app):

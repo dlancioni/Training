@@ -1,7 +1,7 @@
 from flask import Flask, render_template, sessions
 from flask.blueprints import Blueprint
 from src.models.category import Category
-from db.config import db
+from src.db.config import db
 
 store = Blueprint("store", __name__, template_folder = "../templates", static_folder="static")
 

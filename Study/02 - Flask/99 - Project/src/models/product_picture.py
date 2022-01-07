@@ -1,4 +1,4 @@
-from db.config import db
+from src.db.config import db
 
 class ProductPicture(db.Model):
     
