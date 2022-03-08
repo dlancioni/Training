@@ -4,10 +4,35 @@
 
 import os
 import operator
-os.system("clear")
+os.system("cls")
+
+
+products = []
+ID = 0
+NAME = 1
+QTT = 2
+PRICE = 3
+
+
+def add(id, name, qtt, price):
+    products.append([id, name, qtt, price])
+
+def remove(id):
+    for index, value in enumerate(products):
+        if value[0] == id:
+            products.pop(index)
+            return
+
+add(1, "name 1", 10, 1.0)
+add(2, "name 2", 20, 2.0)
+remove(2)
+
+print(products)
+
 
 arr = ["Ford", "Volvo", "Volvo"]
 arr[2] = "Audi"
+print(arr.index("Audi"))
 
 '''
 print (arr)

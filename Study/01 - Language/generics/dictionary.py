@@ -1,4 +1,61 @@
+import os
+import re
+os.system("cls")
+
 # https://www.w3schools.com/python/python_dictionaries.asp
+
+
+# Nested dict
+products = {
+  "1" : {
+    "product_id" : "1",
+    "product_name" : "produto 1",
+    "quantity" : "10",
+    "price" : "1.00",
+  },
+  "2" : {
+    "product_id" : "2",
+    "product_name" : "produto 2",
+    "quantity" : "20",
+    "price" : "29.00",
+  },
+  "3" : {
+    "product_id" : "3",
+    "product_name" : "produto 3",
+    "quantity" : "30",
+    "price" : "39.00",
+  }  
+}
+
+product = {
+  "4" : {
+    "product_id" : "4",
+    "product_name" : "produto 4",
+    "quantity" : "40",
+    "price" : "44.00",
+  }
+}  
+product["price"] = 44.44
+
+# add product
+products.update(product)
+
+# get products 1 and 2
+prod1 = products.get("1")
+prod2 = products.get("2")
+
+# remove a product
+products.pop("1")
+
+# iterate over
+for k, v in products.items():
+    item = dict(v)    
+    item['price'] = 0.01
+    print(k, v)
+    print(item['product_id'])
+    print(item['product_name'])
+    print(item['quantity'])
+    print(item['price'])
 
 # Sintaxe using {}
 dict1 = {"k1":"v1", "k2":"v2", "subkey": ["sub1", "sub2", "sub3"]}
