@@ -1,6 +1,7 @@
 # https://www.programiz.com/python-programming/json
 import os
 import pandas as pd
+import sys
 os.system("cls")
 
 # General setup
@@ -9,7 +10,7 @@ pd.set_option("display.expand_frame_repr", False)
 pd.set_option("display.max_rows", 25)
 
 sep = ";"
-path = "c:\\temp\\data.csv"
+path = sys.path[0] + "\\data.csv"
 data = pd.read_csv(path, sep)
 
 # size and count
