@@ -1,7 +1,7 @@
 # https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
 import os
-import sys
 import numpy as np
+
 #
 # Create arrays to given shape, dtype and order
 #
