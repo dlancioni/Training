@@ -1,16 +1,29 @@
 import os
+from time import time
+from datetime import datetime
 os.system("cls")
 
+# print current time
+def current_time():
+    now = datetime.now()
+    return now.strftime("%H:%M:%S")
+    
 
-# Python tips and tricks
-# https://www.youtube.com/watch?v=Wz5oLT55_jY&list=PL7yh-TELLS1GNyuvPsFEqb7JVMEUTtuau
+#generate a text file and save it in the same directory
+def generate_text_file():
+    with open("c:\\temp\\bigfile.txt", "w") as f:
+        for i in range(1, 50000000):
+            f.write("This is line %d\n" % (i))
 
-# Python Advanced
-# https://www.youtube.com/watch?v=KSiRzuSx120&list=PL7yh-TELLS1FuqLSjl5bgiQIEH25VEmIc
+print(current_time())
+#generate_text_file()            
+print(current_time())
+print("Done")
 
-integer_list = "1 2"
-integer_list = map(int, integer_list.split())
+# difference between start time and end time
+def difftime(start, end):
+    return end - start
 
 
-t = tuple(integer_list)
-print(hash(t))
+
+
