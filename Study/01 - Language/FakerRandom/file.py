@@ -3,7 +3,6 @@
 import os
 import random
 from faker import Faker
-import datetime
 
 os.system("cls")
 

@@ -20,3 +20,28 @@ print("------- y")
 print(b)
 print("------- multiply")
 print(a+b)
+
+
+os.system("cls")
+a = np.array([   [1,2,3], [4,5,6], [7,8,9]   ])
+b = np.array([   [1,2,3], [4,5,6], [7,8,9]   ])
+print( np.subtract(a,b))
+
+
+os.system("cls")
+
+a = np.array([   [1, "david", 1000], 
+                 [2, "Renata", 2000],                  
+                 [3, "Taza", 3000]   ], dtype=type )
+
+b = np.array([   [1, "david", 1000], 
+                 [2, "Renata", 3000], 
+                 [3, "Taza", 3000]   ], dtype=type)
+
+#c = (a==b)
+#print(c)
+
+#rows = np.where(c[:,2]==False)
+print(np.where(a != b))
+
+
