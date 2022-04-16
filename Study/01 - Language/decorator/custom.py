@@ -3,7 +3,6 @@ import os
 from sqlalchemy import false
 os.system("cls")
 
-
 def log(fn):
     
     # delegate the function to wrapper
