@@ -5,8 +5,9 @@ def log(level):
     def wrap_a(fn):
         def wrap_b(*args, **kargs):
             result = fn(*args, **kargs)
-            print(result)
-            print(level)
+            if (level == 1):
+                print("logging calculation: ", result)
+            return result    
         return wrap_b
     return wrap_a
 
@@ -15,5 +16,6 @@ def sum(a, b):
     return a+b
 
 x = sum(1, 1)
-x = sum(2, 1)
+print(x) 
+
 
