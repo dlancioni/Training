@@ -1,15 +1,15 @@
 import os
 os.system("cls")
 
-def log(fn):
-    def wrapper(*args, **kargs):
-        result = fn(*args, **kargs)
-        return result
+def logger(fn):
+    def wrapper(*args):
+        print(fn.__name__, (args[0]), (args[1]))
+        return fn(*args)
     return wrapper
 
-@log
+@logger
 def sum(a, b):
     return a+b
 
-x = sum(1, 1)
-print(x)
+print(sum(1, 1))
+

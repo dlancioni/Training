@@ -15,7 +15,7 @@ def log(level):
 def sum(a, b):
     return a+b
 
-x = sum(1, 1)
-print(x) 
+print(sum(1, 1))
+
 
 
