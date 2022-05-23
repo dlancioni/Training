@@ -27,6 +27,9 @@ products = {
   }  
 }
 
+for k, v in products.items():
+    item = dict(v)    
+
 product = {
   "4" : {
     "product_id" : "4",
@@ -56,7 +59,7 @@ for k, v in products.items():
     print(item['product_name'])
     print(item['quantity'])
     print(item['price'])
-
+type(v)
 # Sintaxe using {}
 dict1 = {"k1":"v1", "k2":"v2", "subkey": ["sub1", "sub2", "sub3"]}
 
