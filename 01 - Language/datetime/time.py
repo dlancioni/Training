@@ -2,10 +2,12 @@ import os
 os.system("cls")
 
 from datetime import datetime
-from datetime import timedelta
 import time
 import os
 os.system("cls")
+
+# time hh:mm:ss
+print(datetime.now().strftime("%H:%M:%S"))
 
 # time ticks (since 70's)
 print(time.time())
