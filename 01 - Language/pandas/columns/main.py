@@ -2,7 +2,6 @@ import os
 import pandas as pd
 import sys
 
-
 # General setup
 pd.set_option("display.precision", 2)
 pd.set_option("display.expand_frame_repr", False)
@@ -28,3 +27,8 @@ print(ds[ds.columns[0]]) # First
 print(ds[ds.columns[2]]) # Third
 print(ds[ds.columns[ds.columns.size -1]]) # Last
 
+# print subset of data (columns)
+os.system("cls")
+rs1 = ds[["Name", "Salary"]]
+rs2 = ds[[ds.columns[0], ds.columns[1]]]
+print(rs2)
