@@ -1,6 +1,7 @@
 import os
 import subprocess
 
-x = subprocess.run("dir", shell=True, capture_output=True);
 
-x = os.system("dir")
+numbers = [1,2,3,4,5]
+arr = [(number * 5) for number in numbers]
+print(arr)

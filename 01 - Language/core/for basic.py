@@ -1,3 +1,5 @@
+import os
+os.system("cls")
 
 # Simple For
 arr = [1,2,3,4]    

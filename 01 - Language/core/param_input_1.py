@@ -1,4 +1,6 @@
 import sys
+import os
+os.system("cls")
 
 # First parameter is always the eslf script:
 # python sys.py

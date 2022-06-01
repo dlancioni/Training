@@ -1,6 +1,4 @@
 import os
-
-# Clear console
 os.system("cls")
 
 # Accept user input

@@ -1,5 +1,8 @@
 import argparse
 
+import os
+os.system("cls")
+
 # Construct the argument parser
 ap = argparse.ArgumentParser()
 

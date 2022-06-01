@@ -5,6 +5,9 @@
 # Set is a collection which is unordered, unchangeable, and unindexed. No duplicate members.
 # Dictionary is a collection which is ordered* and changeable. No duplicate members.
 
+import os
+os.system("cls")
+
 # Available data types
 x = str("Hello World")	                            # str	
 x = int(20)	                                        # int	

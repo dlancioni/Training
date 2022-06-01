@@ -1,6 +1,9 @@
 # https://docs.python.org/3/tutorial/errors.html
 # https://docs.python.org/3/library/exceptions.html#bltin-exceptions
 
+import os
+os.system("cls")
+
 # Basic flow
 print("Basic flow")
 def calc():

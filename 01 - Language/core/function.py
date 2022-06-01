@@ -1,5 +1,8 @@
 # https://www.w3schools.com/python/python_functions.asp
 
+import os
+os.system("cls")
+
 # Basic usage
 print("Basic usage")
 def fn1(x, y):

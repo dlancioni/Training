@@ -1,3 +1,6 @@
+import os
+os.system("cls")
+
 #if statements
 
 x = 20
