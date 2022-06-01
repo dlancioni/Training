@@ -9,7 +9,7 @@ os.system("cls")
 faker = Faker("pt_BR")
 
 with open("c:\\temp\\data.txt", "w") as f:
-    for i in range(1, 1000):         
+    for i in range(1, 10):         
         line = ""
         line += faker.first_name() + " " + faker.last_name() + ";"                                         # Name
         line += faker.email() + ";"                                                                        # Email
