@@ -1,5 +1,6 @@
 # https://zetcode.com/python/multiprocessing/
 import os
+import psutil
 import time
 from datetime import datetime
 from multiprocessing import Process
@@ -25,4 +26,6 @@ if __name__ == '__main__':
     arr.append(datetime.now().strftime("%H:%M:%S"))    
     print( arr )
     
-    
+print(psutil.cpu_count(logical=False))
+print(psutil.users())
+print(psutil.virtual_memory())

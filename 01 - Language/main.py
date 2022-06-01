@@ -1,16 +1,7 @@
 import os
-os.system("cls")
-
-data = {"name":"Argentina", "currency":"Peso", "geo":{"x":"10", "y":"20"}}
+import subprocess
 
 
-def json_parser(dict_var):
-    
-    for k, v in dict_var.items():
-        if isinstance(v, dict):
-            for k, v in json_parser(v):
-                print(k, v)
-        else:
-            print(k, v)
+x = subprocess.run("dir", shell=True, capture_output=True);
 
-json_parser(data)
+x = os.system("dir")

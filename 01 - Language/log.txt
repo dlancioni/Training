@@ -1,9 +1,0 @@
-[INFO] LANCID 20211110 1228: Logging line number 1
-[INFO] LANCID 20211110 1228: Logging line number 2
-[INFO] LANCID 20211110 1228: Logging line number 3
-[INFO] LANCID 20211110 1228: Logging line number 4
-[INFO] LANCID 20211110 1228: Logging line number 5
-[INFO] LANCID 20211110 1228: Logging line number 6
-[INFO] LANCID 20211110 1228: Logging line number 7
-[INFO] LANCID 20211110 1228: Logging line number 8
-[INFO] LANCID 20211110 1228: Logging line number 9
