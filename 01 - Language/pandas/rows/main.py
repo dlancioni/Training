@@ -1,39 +1,40 @@
 import os
+import numpy as np
 import pandas as pd
-import sys
 
-# General setup
-pd.set_option("display.precision", 2)
-pd.set_option("display.expand_frame_repr", False)
-pd.set_option("display.max_rows", 25)
-
-sep = ";"
-path = sys.path[0] + "\\data.csv"
-ds = pd.read_csv(path, sep)
+# Create a dataset
+data = {
+    "Name": ["Joana Campos","Rafael Costa","Augusto Castro","Maria Clara","Jose Maria"],
+    "Level" :["AVP","AVP","VP","D","ED"],
+    "Salary":[10000, 9000, 15000, 20000, 50000],    
+    "Note":["","","","",""]
+}
+cols = ["Name", "Level", "Salary", "Note"]
+df = pd.DataFrame(data, columns=cols)
 
 # print the dataset
 os.system("cls")
-print(ds)
+print(df)
 
 # Select row or multiple rows
 os.system("cls")
-print(ds.loc[0])        # Individual
-print(ds.loc[1])        # Individual
-print(ds.loc[[1,3,5]])  # Multiple
-print(ds.loc[1:3])      # Range
+print(df.loc[0])        # Individual
+print(df.loc[1])        # Individual
+print(df.loc[[1,2,3]])  # Multiple
+print(df.loc[1:3])      # Range
 
 # Select row and columns
 os.system("cls")
-print(ds.loc[1:3, ["Name", "Level"]])
+print(df.loc[1:3, ["Name", "Level"]])
 
 # using iloc to work with indexes
 os.system("cls")
-print(ds.iloc[1:3, [0, 1]])
+print(df.iloc[1:3, [0, 1]])
 
 # Filtering results
 os.system("cls")
-print(ds[ds["Salary"]>8000])
-print(ds.loc[ds["Name"]=="Rafael Costa", ["Name", "Level"]])
-print(ds.loc[ds["Salary"].between(4000, 6000, inclusive=True), ["Name", "Salary"]])
-print(ds["Salary"].idxmin)
-print(ds["Salary"].idxmax)
+print(df[df["Salary"]>8000])
+print(df.loc[df["Name"]=="Rafael Costa", ["Name", "Level"]])
+print(df.loc[df["Salary"].between(12000, 15000, inclusive=True), ["Name", "Salary"]])
+print(df["Salary"].idxmin)
+print(df["Salary"].idxmax)

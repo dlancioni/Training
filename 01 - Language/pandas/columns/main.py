@@ -1,19 +1,16 @@
 import os
+import numpy as np
 import pandas as pd
-import sys
 
-# General setup
-pd.set_option("display.precision", 2)
-pd.set_option("display.expand_frame_repr", False)
-pd.set_option("display.max_rows", 25)
-
-sep = ";"
-path = sys.path[0] + "\\data.csv"
-df = pd.read_csv(path, sep)
-
-# print the dataset
-os.system("cls")
-print(df)
+# Create a dataset
+data = {
+    "Name": ["Joana Campos","Rafael Costa","Augusto Castro","Maria Clara","Jose Maria"],
+    "Level" :["AVP","AVP","VP","D","ED"],
+    "Salary":[10000, 9000, 15000, 20000, 50000],    
+    "Note":["","","","",""]
+}
+cols = ["Name", "Level", "Salary", "Note"]
+df = pd.DataFrame(data, columns=cols)
 
 #print the columns
 os.system("cls")
@@ -34,19 +31,18 @@ rs2 = df[[df.columns[0], df.columns[1]]]
 print(rs2)
 
 # rename columns
+tmp = df.copy()
 os.system("cls")
-print(df.columns)
-df.columns = ["Col1","Col2","Col3","Col4","Col5"] # all column
-print(df.columns)
-df.rename(columns={"Col1":"Name", "Col2":"Email", "Col3":"Hire Date"}, inplace=True) # specific column 
-print(df.columns)
+print(tmp.columns)
+tmp.columns = ["Col1","Col2","Col3","Col4"] # all column
+print(tmp.columns)
+tmp.rename(columns={"Col1":"Name", "Col2":"Email"}, inplace=True) # specific column 
+print(tmp.columns)
 
 # delete columns
-del df["Col4"]
-df.pop("Col5")
-
-# append columns
-df.append()
+del tmp["Col3"]
+tmp.pop("Col4")
+print(tmp)
 
 # done
 os.system("cls")
