@@ -1,6 +1,7 @@
 # https://docs.python.org/3/tutorial/datastructures.html#nested-list-comprehensions
 # https://www.w3schools.com/python/python_arrays.asp
 # https://www.w3schools.com/python/python_arrays.asp
+# https://www.askpython.com/python/list/find-string-in-list-python (pending read)
 
 import os
 import operator
