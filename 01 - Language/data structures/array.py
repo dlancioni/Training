@@ -26,13 +26,14 @@ def remove(id):
 add(1, "name 1", 10, 1.0)
 add(2, "name 2", 20, 2.0)
 remove(2)
-
 print(products)
 
 
 arr = ["Ford", "Volvo", "Volvo"]
 arr[2] = "Audi"
 print(arr.index("Audi"))
+
+print("Ford" in arr)
 
 '''
 print (arr)
