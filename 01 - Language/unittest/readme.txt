@@ -22,3 +22,7 @@ Considering the folder structure below
     # run all test files in the same folder
     python -m unittest discover -v 
 
+# Important note
+    the test classes must have the prefix test_ otherwise parameter -discover does not work:
+    test_car.py
+    test_person.py
