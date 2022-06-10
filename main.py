@@ -42,19 +42,13 @@ def get_field_list(fields=[], types=None, funcs=None):
     size = len(fields) -1
     while i <= size:
         name = fields[i]
-        type = types[i] if funcs != None else ""
-        aggreg = funcs[i] if funcs != None else ""
-        if type == "decimal":
-            if aggreg:
-                sql += f"{aggreg}({name}) {name}, "
-            else:
-                sql += f"{name}, "
-        else:
-            sql += f"{name}, "
+        func = funcs[i] if funcs != None else ""
+        sql += f"{func}({name}) {name}, " if func else f"{name}, "
         i += 1
     sql = sql.strip()[:-1]    
     return sql
 
+os.system("cls")
 fields = ["account", "balance"]
 types = ["text", "decimal"]
 aggregs = ["", "sum"]
@@ -62,6 +56,8 @@ print( "Select: ", get_field_list(fields, types, aggregs) )
                 
 fields = ["account", "balance"]
 print( "Order By: ", get_field_list(fields) )
+    
+print( "Order By: ", get_field_list() )    
     
     
 dect =  {
