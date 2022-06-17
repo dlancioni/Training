@@ -26,3 +26,7 @@ Considering the folder structure below
     the test classes must have the prefix test_ otherwise parameter -discover does not work:
     test_car.py
     test_person.py
+
+# About paths
+    sys.path.append("..") -> used to avoid tests via command line
+    sys.path.insert(1, pathlib.Path().resolve()._str + "\\recon\\") -> used to avoid debugging via test function :/
