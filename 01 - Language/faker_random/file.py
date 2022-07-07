@@ -8,9 +8,9 @@ os.system("cls")
 
 faker = Faker("pt_BR")
 
-with open("c:\\temp\\100k1.txt", "w") as f:
+with open("c:\\temp\\1M1.txt", "w") as f:
     f.write("Codigo; Nome; Email; Data; Cargo; Salario\n")
-    for i in range(1, 100001):
+    for i in range(1, 1000001):
         line = ""
         line += str(i) + ";"                                                                               # Codigo
         line += faker.first_name() + " " + faker.last_name() + ";"                                         # Name
