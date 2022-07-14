@@ -3,8 +3,8 @@ import argparse
 # usage:
 # python cmd.py: do nothing
 # python cmd.py --help: print available argumentos (-g -r) and its description
-# python cmd.py --r recon.json: do nothing
-# python cmd.py --g group.json: do nothing
+# python cmd.py --r recon.cfg: do nothing
+# python cmd.py --g group.cfg: do nothing
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--g", help="json file that groups the recons")

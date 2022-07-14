@@ -16,7 +16,7 @@ if not appenv:
     raise ValueError("No APP_ENV set for Flask application")
 
 # override configuration example
-app.config.from_file("config.json", load=json.load)
+app.config.from_file("config.cfg", load=json.load)
 print(app.secret_key)
 print(app.env)
 

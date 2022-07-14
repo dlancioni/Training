@@ -1,2 +1,3 @@
-import os
-import json
+# coding=UTF-8
+
+print("coração")

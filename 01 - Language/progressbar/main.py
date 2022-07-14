@@ -1,20 +1,14 @@
 # https://pypi.org/project/progress/
 
 import os
-from progress.spinner import Spinner
 from progress.bar import ShadyBar
+from progress.bar import Bar
 
 os.system("cls")
-bar = ShadyBar('Importando arquivo', max=10)
-for i in range(10):
-    # Do some work
+total = 10
+#bar = ShadyBar('Running recon', max=total)
+bar = Bar('Running recon', max=total)
+for i in range(total):   
     bar.next()
+    print("total")
 bar.finish()
-
-
-
-state = ""
-spinner = Spinner('Carregando ')
-while state != 'FINISHED':
-    # Do some work
-    spinner.next()
