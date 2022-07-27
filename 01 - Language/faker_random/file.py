@@ -5,9 +5,9 @@ import random
 from faker import Faker
 os.system("cls")
 faker = Faker("pt_BR")
-with open("c:\\temp\\1M.txt", "w", encoding="UTF-8" ) as f:
+with open("c:\\temp\\10k.txt", "w", encoding="UTF-8" ) as f:
     f.write("Codigo; Nome; Email; Data; Cargo; Salario\n")
-    for i in range(1, 1000001):
+    for i in range(1, 10001):
         line = ""
         line += str(i) + ";"                                                                               # Codigo
         line += faker.first_name() + " " + faker.last_name() + ";"                                         # Name
