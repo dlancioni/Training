@@ -1,3 +1,5 @@
+#https://github.com/sdispater/pendulum/blob/master/docs/docs/string_formatting.md
+
 import os
 import datetime
 import pendulum as pdl
