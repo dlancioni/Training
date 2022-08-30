@@ -4,6 +4,10 @@ import os
 import numpy as np
 import pandas as pd
 
+BASE_FOLDER = "PS RiskDB Data Monitor"
+BASE_PATH = "c:\\lancid\\data\\"
+STATUS = "On"
+
 def get_base(level):
     data = {"Level" :[level, level, level, level, level],"BusinessLine" :["CLEARING","DCS", "FUTURES", "PB", "SPG"]}
     cols = ["Level","BusinessLine"]
@@ -22,16 +26,16 @@ def trim_all_columns(df):
     return df.applymap(trim_strings)
 
 def get_timed(level, dt, tm):
-       
-    file_name = f"PS RiskDB Data Monitor {dt} {tm}.csv"
-    path = f"c:\\lancid\\data\\PS RiskDB Data Monitor {dt}\\{file_name}"
-    df1 = pd.read_csv(path, ",")
+    
+    file_name = f"{BASE_FOLDER} {dt} {tm}.csv"
+    path = f"{BASE_PATH}{BASE_FOLDER} {dt}\\{file_name}"
+    df1 = pd.read_csv(path, ",")    
     df1 = trim_all_columns(df1)
-
+    
     col_bl = "BusinessLine"
     col_lv = f"Level {level}"   
     df1 = df1[[col_bl, col_lv]]
-    df1 = df1[df1[col_lv] == "On"]
+    df1 = df1[df1[col_lv] == STATUS]
     df1 = df1.groupby([col_bl])[col_lv].count().reset_index()
     
     df2 = get_empty(level)
@@ -41,7 +45,7 @@ def get_timed(level, dt, tm):
 
 def main(dt, tms):
     result = []
-    for level in [1]:
+    for level in [1,2,3,4]:
         df1 = get_base(level)
         for tm in tms:
             df2 = get_timed(level, dt, tm)
@@ -50,9 +54,9 @@ def main(dt, tms):
     result = pd.concat(result)
     return result
 
+
 dt = "20220826"
 tms = ["0700", "0800", "0900"]
-tms = ["0700"]
 result = main(dt,tms)
 os.system("cls")
 print(result)
