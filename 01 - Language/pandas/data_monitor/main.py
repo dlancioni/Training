@@ -60,4 +60,5 @@ tms = ["0700", "0800", "0900"]
 result = main(dt,tms)
 os.system("cls")
 print(result)
+result.to_csv(f"{BASE_PATH}{BASE_FOLDER} {dt}\\result.csv") 
 
