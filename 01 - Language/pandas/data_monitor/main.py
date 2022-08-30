@@ -17,26 +17,27 @@ def get_empty(level):
     df = pd.DataFrame(data, columns=cols)
     return df
 
-def get_timed(level, dt, tm):
+def trim_all_columns(df):
+    trim_strings = lambda x: x.strip() if isinstance(x, str) else x
+    return df.applymap(trim_strings)
 
-    col_bl = "BusinessLine"
-    col_lv = f"Level {level}"
+def get_timed(level, dt, tm):
        
     file_name = f"PS RiskDB Data Monitor {dt} {tm}.csv"
     path = f"c:\\lancid\\data\\PS RiskDB Data Monitor {dt}\\{file_name}"
     df1 = pd.read_csv(path, ",")
-   
+    df1 = trim_all_columns(df1)
+
+    col_bl = "BusinessLine"
+    col_lv = f"Level {level}"   
     df1 = df1[[col_bl, col_lv]]
     df1 = df1[df1[col_lv] == "On"]
     df1 = df1.groupby([col_bl])[col_lv].count().reset_index()
     
     df2 = get_empty(level)
     df = df1.set_index(col_bl).combine_first(df2.set_index(col_bl)).reset_index()
-
-    df.rename(columns={col_lv:tm}, inplace=True)
-    
+    df.rename(columns={col_lv:tm}, inplace=True)    
     return df
-
 
 def main(dt, tms):
     result = []
@@ -49,9 +50,10 @@ def main(dt, tms):
     result = pd.concat(result)
     return result
 
-os.system("cls")
 dt = "20220826"
 tms = ["0700", "0800", "0900"]
+tms = ["0700"]
 result = main(dt,tms)
+os.system("cls")
 print(result)
 
