@@ -68,6 +68,7 @@ else:
     for file in files:
         if (file[32:36] != ""):
             tms.append(file[32:36])
+    tms.sort()
     result = main(dt,tms)
     print(result)
     print("Results at ", path + "\\result.csv")
