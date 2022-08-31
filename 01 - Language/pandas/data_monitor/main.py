@@ -1,7 +1,8 @@
 # https://pandas.pydata.org/docs/user_guide/merging.html
 
-import warnings
 import os
+import sys
+import warnings
 import numpy as np
 import pandas as pd
 warnings.simplefilter(action="ignore", category=FutureWarning)
@@ -54,9 +55,8 @@ def main(dt, tms):
     return result
 
 
-dt = "20220826"
+dt = sys.argv[1]
 tms = []
-
 path = f"{BASE_PATH}{BASE_FOLDER} {dt}"
 files = os.listdir(path)
 os.system("cls")
