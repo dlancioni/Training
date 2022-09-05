@@ -40,6 +40,7 @@ def get_timed(level, dt, tm):
     df1 = df1.groupby([col_bl])[col_lv].count().reset_index()    
     df2 = get_empty(level)
     df = df1.set_index(col_bl).combine_first(df2.set_index(col_bl)).reset_index()
+    tm = tm[0:2] + ":" + tm[2:5]
     df.rename(columns={col_lv:tm}, inplace=True)    
     return df
 
