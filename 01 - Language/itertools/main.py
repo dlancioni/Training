@@ -2,6 +2,12 @@ import os
 from itertools import combinations, count, cycle, repeat
 from itertools import product, permutations
 
+
+def solution(arr):
+    
+
+
+
 #
 # Infinite iterators
 #
