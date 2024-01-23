@@ -43,3 +43,14 @@ diff = t2 - t1
 diff = diff.total_seconds()
 diff = int(abs(diff))
 print (diff)
+
+
+def date_parts():
+    print(datetime.today().strftime('%Y-%m-%d'))    #YYYY-MM-DD
+    print(datetime.today().strftime('%Y'))          #YYYY
+    print(datetime.today().strftime('%y'))          #YY
+    print(datetime.today().strftime('%m'))          #MM
+    print(datetime.today().strftime('%b'))          #MMM
+    print(datetime.today().strftime('%d'))          #DD
+
+print(date_parts())   
