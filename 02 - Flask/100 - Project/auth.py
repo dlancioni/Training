@@ -10,7 +10,12 @@ def login():
    if request.method == "POST":
       form = Login(** request.form)
       form.validate()
+
+      print(form.validated)
+
       if form.validated:
         return render_template('main.html')
       else:
          return render_template('login.html', form=form)
+   else:
+         return render_template('login.html', form="")

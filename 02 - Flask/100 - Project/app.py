@@ -10,10 +10,8 @@ app.register_blueprint(users)
 app.register_blueprint(auth)
 
 @app.route('/')
-def index():
+def login():
    return render_template('login.html', form="")
 
 if __name__ == '__main__':
    app.run(debug=True)
-   
-   

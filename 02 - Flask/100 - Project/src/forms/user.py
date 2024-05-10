@@ -2,28 +2,34 @@ from src.forms.form import Form
 
 class Login(Form):
 
-   def __init__(self, username="", password=""):
+   def __init__(self, name="", email="", username="", password="", password_new="", password_confirm=""):
 
       """
       mandatory
       """
-      self.validated = True
+      self.validated = True      
 
       """
       form fields
       """
+      self.name = name
+      self.email = email
       self.username = username
       self.password = password
-    
+      self.password_new = password_new
+      self.password_confirm = password_confirm
+
       """
       field validation
-      """    
-      self.username_err = ""      
+      """  
+      self.name_err = ""
+      self.email_err = ""
+      self.username_err = ""
       self.password_err = ""
+      self.password_new = ""
+      self.password_confirm = ""
 
-   def __str__(self):
-      return f"{self.username} {self.password}"
-
+   
    """
    inherited methods
    """     
