@@ -1,13 +1,16 @@
 from markupsafe import escape
-from flask import Flask, request, render_template, session
+from flask import Flask, render_template
 
-from users import users
-from auth import auth
+from modules.users import users
+from modules.auth import auth
+
+def setup_blueprints(app):
+    app.register_blueprint(users, url_prefix = "/modules")
+    app.register_blueprint(auth, url_prefix = "/modules")
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = '3d6f45a5fc12445dbac2f59c3b6c7cb1' 
-app.register_blueprint(users)
-app.register_blueprint(auth)
+setup_blueprints(app)
 
 @app.route('/')
 def login():
