@@ -1,0 +1,23 @@
+<html>
+<body>
+<form name="login" method="post" Action = "{{ url_for("auth.login") }}">
+    <br>
+    <br>
+    <center>
+        <table align="center">
+            <tr>
+                <td>Username</td>
+                <td><input type="text" id="username" name="username" value="{{ form.username }}"> {{ form.username_err }}</td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="text" id="password" name="password" value="{{ form.password }}"> {{ form.password_err }} </td>
+            </tr>        
+        </table>
+        <br>
+        <p><input type="submit" value="Login" onclick=""></p>
+
+    </center>
+</form>
+</body>
+</html>
