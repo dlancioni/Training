@@ -2,4 +2,5 @@
 
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
-url = "sqlite:///src/db/ecommerce.dat"
+
+url = "postgresql://didkpepa:oavpNBSri87YlVUYzXMKUSkkhAktacSb@kesavan.db.elephantsql.com/didkpepa"

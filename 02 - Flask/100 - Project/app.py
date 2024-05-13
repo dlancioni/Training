@@ -1,29 +1,28 @@
-from markupsafe import escape
-from flask import Flask, render_template
+from flask import Flask
+from src.db.config import db, url
 
-from modules.users import users
-from modules.auth import auth
-from src.model.config import db, url
-
-
-def setup_blueprints(app):
-    app.register_blueprint(users, url_prefix = "/modules")
-    app.register_blueprint(auth, url_prefix = "/modules")
+from web.blueprints.user import user
+from web.blueprints.home import home
 
 def setup_database(app):
     app.config['DEBUG'] = True
     app.config['SQLALCHEMY_DATABASE_URI'] = url
     db.init_app(app)
+    
+def setup_blueprints(app):
+    app.register_blueprint(home, url_prefix = "/")                        # home page (no prefix ever)
+    app.register_blueprint(user, url_prefix = "/admin/user")              # users maintenance
 
 def create_app():
-   app = Flask(__name__,
+    app = Flask(__name__,
                 static_url_path="",
                 static_folder="web/static",
                 template_folder="web/templates")
-   app.config['SECRET_KEY'] = '3d6f45a5fc12445dbac2f59c3b6c7cb1'    
-   setup_blueprints(app)
-   setup_database(app)       
+    
+    setup_database(app)
+    setup_blueprints(app)
+    return app
 
-if __name__ == '__main__':
-   app = create_app()
-   app.run(debug=True)
+if __name__ == "__main__":
+    app = create_app()
+    app.run()
