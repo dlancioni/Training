@@ -1,15 +1,16 @@
 from src.db.config import db
 from src.models.user import User as UserModel
 
-class Users():
+class User():
 
-    def __init__(self, db):
-        self.db = db
+    def __init__(self):
+        pass
 
-    def save(self):
-        db.session.add(Users("User 99"))
+    def save(self, model):
+        db.session.add(model)
         db.session.commit()
+        UserModel.query.filter_by(role='admin').update()
     
-    def query(self):
-        rs = UserModel.query.order_by(UserModel.name).all()
+    def list(self):
+        rs = UserModel.query.order_by(UserModel.id).all()
         return rs
