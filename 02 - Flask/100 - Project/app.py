@@ -1,8 +1,8 @@
 from flask import Flask
 from src.db.config import db, url
 
-from web.blueprints.user import user
-from web.blueprints.home import home
+from web.blueprints.home import bp_home
+from web.blueprints.user import bp_user
 
 def setup_database(app):
     app.config['DEBUG'] = True
@@ -10,8 +10,8 @@ def setup_database(app):
     db.init_app(app)
     
 def setup_blueprints(app):
-    app.register_blueprint(home)
-    app.register_blueprint(user)
+    app.register_blueprint(bp_home)
+    app.register_blueprint(bp_user)
 
 def create_app():
     app = Flask(__name__,

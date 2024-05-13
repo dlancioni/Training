@@ -2,5 +2,4 @@
 
 from flask_sqlalchemy import SQLAlchemy
 db = SQLAlchemy()
-
 url = "postgresql://didkpepa:oavpNBSri87YlVUYzXMKUSkkhAktacSb@kesavan.db.elephantsql.com/didkpepa"

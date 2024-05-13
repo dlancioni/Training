@@ -1,16 +1,11 @@
 from flask import Flask, render_template
 from flask.blueprints import Blueprint
-from src.models.user import User
+from src.controller import user as UserController
 
-user = Blueprint("user", __name__, template_folder = "../templates", static_folder="static")
+bp_user = Blueprint("user", __name__)
 
-@user.route("/list")
+@bp_user.route("/save")
 def user_list():
-
-    try:
-        users = User.query.all()
-        users = [user.username for user in users]
-    except Exception:
-        users = "Something went wrong"
-      
-    return render_template("user.html", users=users)
+    userController = UserController()
+    userController.save()
+    return render_template("user.html")
