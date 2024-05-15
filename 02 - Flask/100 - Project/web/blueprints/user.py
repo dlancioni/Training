@@ -7,7 +7,7 @@ bp_user = Blueprint("user", __name__)
 
 @bp_user.route("/save")
 def save():
-    model = UserModel(None, "User 6")
+    model = UserModel("User 6")
     userController = UserController()
     userController.save(model)
     return render_template("user.html")

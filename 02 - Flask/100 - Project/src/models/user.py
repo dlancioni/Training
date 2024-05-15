@@ -2,8 +2,7 @@ from src.db.config import db
 
 class User(db.Model):
 
-    def __init__(self, id, username):
-        self.id = id
+    def __init__(self, username):
         self.username = username
 
     __tablename__ = "tb_user"
